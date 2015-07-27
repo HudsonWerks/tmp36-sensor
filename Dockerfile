@@ -5,6 +5,7 @@ FROM resin/beaglebone-node
 
 # install deps on build server
 #RUN npm install
+RUN npm install -g bonescript
 
 # copy all files to /app dir
 COPY . /app 
