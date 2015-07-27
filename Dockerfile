@@ -1,10 +1,10 @@
 
 #base-image for BBB with node
-FROM resin/beaglebone-black-debian
-#FROM resin/beaglebone-node
+##FROM resin/beaglebone-black-debian
+FROM resin/beaglebone-node
 
 # install deps on build server
-RUN npm install
+#RUN npm install
 
 # copy all files to /app dir
 COPY . /app 
