@@ -3,7 +3,7 @@
 FROM resin/beaglebone-black-debian
 
 # install deps on build server
-#RUN npm install express
+RUN npm install express
 
 # copy all files to /app dir
 COPY . /app 
