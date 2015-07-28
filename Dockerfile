@@ -3,6 +3,9 @@
 ##FROM resin/beaglebone-black-debian
 FROM resin/beaglebone-black-node
 
+# RUN systemd in container, keeps the container open even if you main process fails.
+ENV INITSYSTEM on
+
 # install deps on build server
 #RUN npm install
 #RUN npm install -g bonescript
