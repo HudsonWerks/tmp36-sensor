@@ -9,7 +9,8 @@ ENV INITSYSTEM on
 # install deps on build server
 #RUN npm install
 #RUN npm install -g bonescript
-RUN apt-get update
+RUN apt-get update && \
+    apt-get -y install curl lsb-release
 
 # Download device tree compiler with symbol (-@) support
 WORKDIR /dtc-build
