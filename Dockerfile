@@ -6,7 +6,9 @@ FROM resin/beaglebone-black-node
 # install deps on build server
 #RUN npm install
 #RUN npm install -g bonescript
-RUN TERM=dumb npm install -g bonescript 
+RUN apt-get update
+
+#RUN TERM=dumb npm install -g bonescript 
 
 # copy all files to /app dir
 COPY . /app 
