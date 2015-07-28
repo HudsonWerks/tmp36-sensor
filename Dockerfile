@@ -18,7 +18,8 @@ WORKDIR /dtc-build
 RUN curl -LO https://raw.github.com/RobertCNelson/tools/master/pkgs/dtc.sh && \
     chmod +x dtc.sh && \
     ./dtc.sh
-
+    
+RUN npm install -g bonescript
 #RUN TERM=dumb npm install -g bonescript 
 
 # copy all files to /app dir
