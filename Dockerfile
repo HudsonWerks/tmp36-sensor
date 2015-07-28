@@ -10,14 +10,14 @@ ENV INITSYSTEM on
 #RUN npm install
 #RUN npm install -g bonescript
 RUN apt-get update && \
-    apt-get -y install curl lsb-release
+    apt-get -y install curl lsb-release && \
+    apt-get -y install git build-essential sudo vim
 
 # Download device tree compiler with symbol (-@) support
 WORKDIR /dtc-build
 RUN curl -LO https://raw.github.com/RobertCNelson/tools/master/pkgs/dtc.sh && \
     chmod +x dtc.sh && \
     ./dtc.sh
-
 
 #RUN TERM=dumb npm install -g bonescript 
 
