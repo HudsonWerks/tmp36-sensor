@@ -11,7 +11,9 @@ ENV INITSYSTEM on
 #RUN npm install -g bonescript
 RUN apt-get update && \
     apt-get -y install curl lsb-release && \
-    apt-get -y install git build-essential sudo vim
+    apt-get -y install git build-essential sudo vim && \
+    apt-get install -y build-essential g++ python-setuptools python2.7-dev
+
 
 # Download device tree compiler with symbol (-@) support
 WORKDIR /dtc-build
@@ -19,8 +21,8 @@ RUN curl -LO https://raw.github.com/RobertCNelson/tools/master/pkgs/dtc.sh && \
     chmod +x dtc.sh && \
     ./dtc.sh
     
-RUN npm install -g bonescript
-#RUN TERM=dumb npm install -g bonescript 
+#RUN npm install -g bonescript
+RUN TERM=dumb npm install -g bonescript 
 
 # copy all files to /app dir
 COPY . /app 
